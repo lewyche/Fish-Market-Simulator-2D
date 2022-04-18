@@ -1,7 +1,7 @@
 extends Control
 
 var menu_items : Array
-onready var player = get_node("/root/Spatial/World/Player")
+onready var player = get_node("/root/World/WorldCanvas/Player")
 
 
 
@@ -53,8 +53,8 @@ func refresh_inventory():
 	#Sort Menu to represent inventory
 	#####################################
 	
-	var item_position_x = 700 
-	var item_position_y = 95
+	var item_position_x = 15
+	var item_position_y = 150
 	
 	for item in inventory:
 		

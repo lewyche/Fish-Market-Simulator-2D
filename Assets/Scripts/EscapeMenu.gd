@@ -3,14 +3,10 @@ extends Control
 var menu_open = false
 
 func _ready():
-	
 	visible = false
 	pause_mode = Node.PAUSE_MODE_PROCESS
 
 func _input(_event):
-	
-	print(1)
-	
 	
 	if Input.is_action_just_pressed("Escape"):
 		
