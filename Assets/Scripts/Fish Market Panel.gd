@@ -6,7 +6,7 @@ var graph_start = 425
 var tick_time = .4		#time between ticks
 
 #limits for graph
-var lower_limit = 375
+var lower_limit = 575
 var upper_limit = 5
 
 var min_val = 0
@@ -111,7 +111,6 @@ func calc_price():
 	return val
 
 func convert_price_to_graph(val):
-	print(val)
 	var difference = lower_limit - val	
 	return upper_limit + difference
 
@@ -123,7 +122,8 @@ func open_market():
 	while open == true:
 
 		var pointX = graph_start + i * column_size		#x value of point in the graph
-		var pointY = convert_price_to_graph(calc_price())
+		print(multiplier)
+		var pointY = convert_price_to_graph(calc_price()) * 2
 		
 		pointX = move_points_back(pointX)
 		pointY = move_points_horizontally(pointY) 
@@ -154,6 +154,11 @@ func change_fish(fish):		#change the fish the graph
 	
 	curr_price = randi() % max_val + min_val
 
+func buy(amount):
+	print("buying" + str(amount))
+
+func sell(amount):
+	pass
 
 func _ready():	#prepare for graph
 	randomize()

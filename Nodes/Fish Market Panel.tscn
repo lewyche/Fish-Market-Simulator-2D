@@ -1,40 +1,46 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Scripts/FishInfo.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scripts/FishInformation.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Scripts/FishButtons.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Scripts/ScrollContainer.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Scripts/Fish Market Panel.gd" type="Script" id=5]
+[ext_resource path="res://Nodes/BuyingContainer.gd" type="Script" id=6]
+[ext_resource path="res://Nodes/SellingContainer.gd" type="Script" id=7]
 
 [node name="Fish Market Panel" type="Control"]
-margin_right = 1024.0
-margin_bottom = 601.0
+margin_right = 1924.0
+margin_bottom = 1073.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Panel" parent="."]
+anchor_top = -0.00263595
+anchor_bottom = -0.00263595
 margin_left = 378.0
-margin_top = -1.0
-margin_right = 1026.0
-margin_bottom = 395.0
+margin_top = 2.82837
+margin_right = 1925.0
+margin_bottom = 596.828
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 margin_left = -2.0
-margin_right = 380.0
-margin_bottom = 598.0
+margin_right = 376.0
+margin_bottom = 590.0
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="FishButtons" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 382.0
-margin_bottom = 598.0
+margin_right = 378.0
+margin_bottom = 590.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 3 )
@@ -43,25 +49,78 @@ __meta__ = {
 }
 
 [node name="FishInformation" type="VBoxContainer" parent="."]
-margin_left = 380.0
-margin_top = 397.0
-margin_right = 1024.0
-margin_bottom = 597.0
+margin_left = 378.0
+margin_top = 593.0
+margin_right = 1932.0
+margin_bottom = 1077.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="FishInformation"]
-margin_right = 644.0
+margin_right = 1554.0
 margin_bottom = 14.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="Price" type="Label" parent="FishInformation"]
 margin_top = 18.0
-margin_right = 644.0
+margin_right = 1554.0
 margin_bottom = 32.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+
+[node name="BuyingContainer" type="HBoxContainer" parent="FishInformation"]
+margin_top = 36.0
+margin_right = 1554.0
+margin_bottom = 56.0
+script = ExtResource( 6 )
+
+[node name="Buy" type="Button" parent="FishInformation/BuyingContainer"]
+margin_right = 36.0
+margin_bottom = 20.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Buy"
+
+[node name="BuyTen" type="Button" parent="FishInformation/BuyingContainer"]
+margin_left = 40.0
+margin_right = 96.0
+margin_bottom = 20.0
+text = "Buy 10"
+
+[node name="BuyHundred" type="Button" parent="FishInformation/BuyingContainer"]
+margin_left = 100.0
+margin_right = 164.0
+margin_bottom = 20.0
+text = "Buy 100"
+
+[node name="SellingContainer" type="HBoxContainer" parent="FishInformation"]
+margin_top = 60.0
+margin_right = 1554.0
+margin_bottom = 80.0
+script = ExtResource( 7 )
+
+[node name="Sell" type="Button" parent="FishInformation/SellingContainer"]
+margin_right = 35.0
+margin_bottom = 20.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Sell"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SellTen" type="Button" parent="FishInformation/SellingContainer"]
+margin_left = 39.0
+margin_right = 94.0
+margin_bottom = 20.0
+text = "Sell 10"
+
+[node name="SellHundred" type="Button" parent="FishInformation/SellingContainer"]
+margin_left = 98.0
+margin_right = 161.0
+margin_bottom = 20.0
+text = "Sell 100"
 
 [node name="FishData" type="Node" parent="."]
 script = ExtResource( 1 )
