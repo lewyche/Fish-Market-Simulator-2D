@@ -1,22 +1,28 @@
 extends Control
 
 var column_size = 5
-var graph_limit = 1250
+var graph_limit = 1920
 var graph_start = 425
 var tick_time = .4		#time between ticks
 
 #limits for graph
-var lower_limit = 375
+var lower_limit = 590
 var upper_limit = 5
 
 var min_val = 0
 var max_val = 1
 
 var curr_price = 1
+var prev_price = 1
 
 var multiplier = 1.0
 
 var open = false	#is market open
+
+var curr_fish_name = ""
+
+onready var player = get_parent().get_parent().get_node("WorldCanvas").get_node("Player")
+onready var inventory = get_parent().get_node("Escape").get_node("Inventory")
 
 enum direction {
 	UP,
@@ -111,9 +117,15 @@ func calc_price():
 	return val
 
 func convert_price_to_graph(val):
-	print(val)
 	var difference = lower_limit - val	
 	return upper_limit + difference
+	
+func fit_point(p):
+	if p > prev_price:
+		p = p * (multiplier * 0.1)
+	elif p < prev_price:
+		p = p * multiplier
+	return p
 
 func open_market():
 	$FishLine.clear_points()
@@ -128,7 +140,8 @@ func open_market():
 		pointX = move_points_back(pointX)
 		pointY = move_points_horizontally(pointY) 
 		
-		
+
+
 		var point_pos = Vector2(pointX, pointY)
 		
 		yield(get_tree().create_timer(tick_time), "timeout")	#wait
@@ -153,8 +166,57 @@ func change_fish(fish):		#change the fish the graph
 	multiplier = calc_multi()
 	
 	curr_price = randi() % max_val + min_val
+	prev_price = curr_price
+	
+	curr_fish_name = fish.name
+	
+	$FishInformation.change_amount("amount: " + str(get_fish_amount()))
 
+func get_fish_amount():
+	for i in inventory.find_inventory():
+		if i.get_name() == curr_fish_name:
+			return i.get_amount()
+	return 0
+
+func check_fish_amount(amount):
+	var count = 0
+	if get_fish_amount() >= amount:
+		return true
+	return false
+
+func find_fish():
+	for i in inventory.find_inventory():
+		if i.get_name() == curr_fish_name:
+			return i
+	
+
+
+func buy(amount):
+
+	if player.get_money() >= curr_price * amount:
+		print("buy")
+		player.set_money(player.get_money() - curr_price * amount)
+		var curr_fish = find_fish()
+		curr_fish.set_amount(get_fish_amount() + amount)
+		
+		$FishInformation.change_money(player.get_money())
+		$FishInformation.change_amount("amount: " + str(get_fish_amount()))
+
+
+func sell(amount):
+	print("sell")
+	if check_fish_amount(amount) == true:
+		player.set_money(player.get_money() + curr_price * amount)
+		var curr_fish = find_fish()
+		curr_fish.set_amount(get_fish_amount() - amount)
+		
+		
+		$FishInformation.change_money(player.get_money())
+		$FishInformation.change_amount("amount: " + str(get_fish_amount()))
+		
 
 func _ready():	#prepare for graph
 	randomize()
 	$FishLine.width = 2		#size of the line
+	$FishInformation.change_money(player.get_money())
+	
