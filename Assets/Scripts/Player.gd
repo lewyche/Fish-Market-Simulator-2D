@@ -21,6 +21,7 @@ func _physics_process(delta):
 	
 	#INPUT
 	#########################################
+	
 	var direction = Vector2.ZERO
 	direction.y = -Input.get_action_strength("Up") + Input.get_action_strength("Down")
 	direction.x = -Input.get_action_strength("Left") + Input.get_action_strength("Right")
@@ -29,7 +30,7 @@ func _physics_process(delta):
 	
 	velocity = direction * speed * delta
 	velocity = move_and_slide(velocity)
-	
+	print(velocity)
 	
 	
 	#PUNCH

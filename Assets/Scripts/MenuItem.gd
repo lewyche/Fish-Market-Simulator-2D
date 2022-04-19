@@ -31,6 +31,6 @@ func item_pressed(id):
 
 func update_menu():
 	
-	text = str(item_name) + ", Rarity: " + str(item_rarity) + ", Value: " + str(item_price) + ", Amount: " + str(item_amount)
+	text = str(item_name) + ", " + Rarity.keys()[item_rarity] + ", " + str(item_price) + "$, Amount: " + str(item_amount)
 	
 	icon = item_icon

@@ -12,9 +12,10 @@
 [ext_resource path="res://Assets/Textures/Fish/CyclopsFish.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 22.5, 46 )
+extents = Vector2( 22.5, 22.3333 )
 
 [node name="Player" type="KinematicBody2D"]
+z_index = 1
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -22,7 +23,7 @@ scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, 2 )
+position = Vector2( 0.5, 37.5 )
 scale = Vector2( 1.5, 1.5 )
 shape = SubResource( 1 )
 
@@ -43,7 +44,6 @@ item_name = "Sigma Fish"
 item_icon = ExtResource( 5 )
 item_price = 32.0
 item_amount = 4
-item_rarity = 1
 
 [node name="BlorbFish" type="Node" parent="Inventory"]
 script = ExtResource( 4 )
@@ -65,7 +65,7 @@ item_name = "Sparkle Fish"
 item_icon = ExtResource( 7 )
 item_price = 32.0
 item_amount = 0
-item_rarity = 1
+item_rarity = 2
 
 [node name="SnakeFish" type="Node" parent="Inventory"]
 script = ExtResource( 4 )
@@ -76,7 +76,6 @@ item_name = "Snake Fish"
 item_icon = ExtResource( 9 )
 item_price = 32.0
 item_amount = 0
-item_rarity = 1
 
 [node name="CyclopsFish" type="Node" parent="Inventory"]
 script = ExtResource( 4 )
@@ -87,7 +86,6 @@ item_name = "Cyclops Fish"
 item_icon = ExtResource( 10 )
 item_price = 32.0
 item_amount = 0
-item_rarity = 1
 
 [node name="BetaFish" type="Node" parent="Inventory"]
 script = ExtResource( 4 )
@@ -98,4 +96,3 @@ item_name = "Beta Fish"
 item_icon = ExtResource( 6 )
 item_price = 32.0
 item_amount = 2
-item_rarity = 1
