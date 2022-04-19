@@ -3,9 +3,16 @@ extends KinematicBody2D
 var velocity = Vector2.ZERO
 export var speed = 30000
 
+export var money = 0
 
 var menu_open = false
 
+func get_money():
+	return money
+
+func set_money(val):
+	money = val
+	
 func _ready():
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

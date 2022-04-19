@@ -23,7 +23,7 @@ anchor_top = -0.00263595
 anchor_bottom = -0.00263595
 margin_left = 378.0
 margin_top = 2.82837
-margin_right = 1925.0
+margin_right = 1920.0
 margin_bottom = 596.828
 __meta__ = {
 "_edit_use_anchors_": false
@@ -31,16 +31,17 @@ __meta__ = {
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 margin_left = -2.0
-margin_right = 376.0
-margin_bottom = 590.0
+margin_right = 188.0
+margin_bottom = 296.0
+rect_scale = Vector2( 2, 2 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="FishButtons" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 378.0
-margin_bottom = 590.0
+margin_right = 190.0
+margin_bottom = 296.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 3 )
@@ -49,30 +50,46 @@ __meta__ = {
 }
 
 [node name="FishInformation" type="VBoxContainer" parent="."]
-margin_left = 378.0
-margin_top = 593.0
-margin_right = 1932.0
-margin_bottom = 1077.0
+anchor_bottom = 0.078
+margin_left = 377.0
+margin_top = 594.0
+margin_right = 1151.0
+margin_bottom = 752.306
+rect_scale = Vector2( 2, 2 )
+alignment = 1
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Money" type="Label" parent="FishInformation"]
+margin_top = 63.0
+margin_right = 774.0
+margin_bottom = 77.0
+text = "Money:"
+
 [node name="Label" type="Label" parent="FishInformation"]
-margin_right = 1554.0
-margin_bottom = 14.0
+margin_top = 81.0
+margin_right = 774.0
+margin_bottom = 95.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+
+[node name="Amount" type="Label" parent="FishInformation"]
+margin_top = 99.0
+margin_right = 774.0
+margin_bottom = 113.0
+text = "Amount:"
 
 [node name="Price" type="Label" parent="FishInformation"]
-margin_top = 18.0
-margin_right = 1554.0
-margin_bottom = 32.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_top = 117.0
+margin_right = 774.0
+margin_bottom = 131.0
+text = "Price:"
 
 [node name="BuyingContainer" type="HBoxContainer" parent="FishInformation"]
-margin_top = 36.0
-margin_right = 1554.0
-margin_bottom = 56.0
+margin_top = 135.0
+margin_right = 774.0
+margin_bottom = 155.0
 script = ExtResource( 6 )
 
 [node name="Buy" type="Button" parent="FishInformation/BuyingContainer"]
@@ -95,9 +112,9 @@ margin_bottom = 20.0
 text = "Buy 100"
 
 [node name="SellingContainer" type="HBoxContainer" parent="FishInformation"]
-margin_top = 60.0
-margin_right = 1554.0
-margin_bottom = 80.0
+margin_top = 159.0
+margin_right = 774.0
+margin_bottom = 179.0
 script = ExtResource( 7 )
 
 [node name="Sell" type="Button" parent="FishInformation/SellingContainer"]

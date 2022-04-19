@@ -1,15 +1,5 @@
 extends HBoxContainer
 
-
-#
-#	for i in range(FishData.fishes.size()):
-#		var button_instance = Button.new()
-#
-#		button_instance.connect("pressed",self, "_on_button_pressed", [FishData.fishes[i]])
-#		button_instance.text = FishData.fishes[i].name
-#		add_child(button_instance)
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Buy.connect("pressed", self, "_on_button_pressed", [1])
