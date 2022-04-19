@@ -69,11 +69,12 @@ func refresh_inventory():
 		menu_item.rect_position.y = item_position_y
 		
 		
-		item_position_y += 100
+		item_position_y += 150
 		
 		#Item values
 		
 		menu_item.item_name = item.item_name
+		menu_item.hint_tooltip = item.item_description
 		menu_item.item_icon = item.item_icon
 		menu_item.item_price = item.item_price
 		menu_item.item_amount = item.item_amount

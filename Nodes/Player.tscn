@@ -36,6 +36,9 @@ script = ExtResource( 3 )
 
 [node name="SigmaFish" type="Node" parent="Inventory"]
 script = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": "Found in north america, known for its anti-social behavior, passionate mindset and headstrong attitude."
+}
 item_name = "Sigma Fish"
 item_icon = ExtResource( 5 )
 item_price = 32.0
@@ -44,6 +47,9 @@ item_rarity = 1
 
 [node name="BlorbFish" type="Node" parent="Inventory"]
 script = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": "Achieves classic shape through selective breeding. In extreme pain all the time."
+}
 item_name = "Blorb Fish"
 item_icon = ExtResource( 8 )
 item_price = 32.0
@@ -52,6 +58,9 @@ item_rarity = 1
 
 [node name="SparkleFish" type="Node" parent="Inventory"]
 script = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": "Most known for as being the weapon used to assassinate King Wolfgang the 3.14."
+}
 item_name = "Sparkle Fish"
 item_icon = ExtResource( 7 )
 item_price = 32.0
@@ -60,6 +69,9 @@ item_rarity = 1
 
 [node name="SnakeFish" type="Node" parent="Inventory"]
 script = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": " About as long as an earthworm. "
+}
 item_name = "Snake Fish"
 item_icon = ExtResource( 9 )
 item_price = 32.0
@@ -68,6 +80,9 @@ item_rarity = 1
 
 [node name="CyclopsFish" type="Node" parent="Inventory"]
 script = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": "Actually has two eyes, the other one is just on the other side."
+}
 item_name = "Cyclops Fish"
 item_icon = ExtResource( 10 )
 item_price = 32.0
@@ -76,6 +91,9 @@ item_rarity = 1
 
 [node name="BetaFish" type="Node" parent="Inventory"]
 script = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": "Despite the plentiful fish in the sea, it still can’t get any hoes (farming tool)."
+}
 item_name = "Beta Fish"
 item_icon = ExtResource( 6 )
 item_price = 32.0
