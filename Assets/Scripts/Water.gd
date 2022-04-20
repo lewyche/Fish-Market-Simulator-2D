@@ -2,8 +2,6 @@ extends StaticBody2D
 
 
 onready var world = get_parent().get_parent()
-onready var player = world.get_node("WorldCanvas").get_node("Player")
-onready var inventory = world.get_node("Escape Menu").get_node("Escape").get_node("Inventory")
 onready var fish_data = world.get_node("Escape Menu").get_node("Fish Market Panel").get_node("FishData")
 
 
@@ -42,8 +40,8 @@ func get_random(arr):
 func fish():
 	var rand = randi() % 99
 	if rand >= 0 and rand <= 49:
-		return get_random(common_fish).name
+		return get_random(common_fish)
 	elif rand >= 50 and rand <= 79:
-		return get_random(uncommon_fish).name
+		return get_random(uncommon_fish)
 	elif rand >= 80 and rand <= 99:
-		return get_random(rare_fish).name
+		return get_random(rare_fish)
