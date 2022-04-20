@@ -17,7 +17,6 @@
 extents = Vector2( 1017.72, 998.962 )
 
 [sub_resource type="DynamicFont" id=1]
-
 size = 35
 font_data = ExtResource( 5 )
 
@@ -51,11 +50,9 @@ script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCanvas/Pond"]
 position = Vector2( -1.25488, 2.63574 )
-<<<<<<< HEAD
-shape = SubResource( 1 )
-=======
+
 shape = SubResource( 6 )
->>>>>>> 5a1e13caeadfec027e1047ef2d5feb7ccdefe31e
+
 
 [node name="Sprite" type="Sprite" parent="WorldCanvas/Pond"]
 position = Vector2( 0, -21.1101 )
@@ -84,10 +81,7 @@ margin_left = 41.0
 margin_top = 27.0
 margin_right = 913.0
 margin_bottom = -739.0
-<<<<<<< HEAD
-custom_fonts/font = SubResource( 2 )
-=======
->>>>>>> 5a1e13caeadfec027e1047ef2d5feb7ccdefe31e
+
 custom_colors/font_color = Color( 0.219608, 1, 0.854902, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Quit game"
