@@ -40,7 +40,7 @@ script = ExtResource( 8 )
 [node name="Player" parent="WorldCanvas" instance=ExtResource( 1 )]
 position = Vector2( 1211, 754 )
 
-[node name="Pond" type="StaticBody2D" parent="WorldCanvas"]
+[node name="Pond" type="StaticBody2D" parent="WorldCanvas" groups=["Water"]]
 modulate = Color( 0.462745, 0.784314, 1, 1 )
 self_modulate = Color( 0.282353, 0.984314, 0.803922, 1 )
 position = Vector2( 1210, 457 )
@@ -49,7 +49,6 @@ script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCanvas/Pond"]
 position = Vector2( -3.76465, -6.58937 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="WorldCanvas/Pond"]
