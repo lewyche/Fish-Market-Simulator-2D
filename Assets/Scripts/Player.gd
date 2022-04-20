@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 var velocity = Vector2.ZERO
-export var speed = 30000
+export var speed = 50000
 export var direction : String
 export var money = 0
 
@@ -14,6 +14,8 @@ var menu_open = false
 
 export var fishing = false
 
+
+onready var animation_player = $AnimationPlayer
 
 func get_money():
 	return money
@@ -40,6 +42,7 @@ func _physics_process(delta):
 		
 		if !fishing:
 			
+			animation_player.play(direction + "_Fish")
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			fishing = true
 		
@@ -64,24 +67,24 @@ func _physics_process(delta):
 		if Input.get_action_strength("Up"):
 			
 			input.y = -1
-			direction = "up"
+			direction = "Up"
 			
 		if Input.get_action_strength("Down"):
 			
 			input.y = 1
-			direction = "down"
+			direction = "Down"
 			
 		if Input.get_action_strength("Left"):
 			
 			input.y = 0
 			input.x = -1
-			direction = "left"
+			direction = "Left"
 			
 		if Input.get_action_strength("Right"):
 			
 			input.y = 0
 			input.x = 1
-			direction = "right"
+			direction = "Right"
 			
 		input = input.normalized()
 		
@@ -89,12 +92,17 @@ func _physics_process(delta):
 		velocity = input * speed * delta
 		velocity = move_and_slide(velocity)
 		
-		
+		if velocity != Vector2.ZERO:
+			
+			animation_player.play(direction + "_Run")
+		else:
+			animation_player.play(direction + "_Idle")
 		
 		#PUNCH
 		######################################
 
 		if Input.is_action_just_pressed("Punch"):
-			print(1)
+			
+			animation_player.play(direction + "_Punch")
 		
 		
