@@ -12,25 +12,25 @@
 [ext_resource path="res://Assets/Textures/Fabric.jpg" type="Texture" id=10]
 [ext_resource path="res://Assets/Scripts/Water.gd" type="Script" id=11]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1015.22, 1020.05 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 35
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 75
 outline_size = 2
 outline_color = Color( 0.121569, 0.286275, 0.498039, 1 )
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 20
 font_data = ExtResource( 5 )
 
-[sub_resource type="Theme" id=4]
-default_font = SubResource( 3 )
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 4 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 8 )
@@ -49,7 +49,9 @@ script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCanvas/Pond"]
 position = Vector2( -3.76465, -6.58937 )
+
 shape = SubResource( 5 )
+
 
 [node name="Sprite" type="Sprite" parent="WorldCanvas/Pond"]
 texture = ExtResource( 10 )
@@ -77,8 +79,8 @@ margin_left = 41.0
 margin_top = 27.0
 margin_right = 913.0
 margin_bottom = -739.0
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.219608, 1, 0.854902, 1 )
-custom_fonts/font = SubResource( 1 )
 text = "Quit game"
 script = ExtResource( 2 )
 
@@ -99,7 +101,7 @@ margin_left = 14.0
 margin_top = 26.0
 margin_right = 864.0
 margin_bottom = 141.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "INVENTORY"
 
 [node name="ItemMenuPrefab" type="MenuButton" parent="Escape Menu/Escape/Inventory"]
@@ -107,7 +109,7 @@ margin_left = -5.0
 margin_top = -241.0
 margin_right = 946.0
 margin_bottom = -96.0
-theme = SubResource( 4 )
+theme = SubResource( 5 )
 text = "asdsdsdsd"
 icon = ExtResource( 9 )
 flat = false
