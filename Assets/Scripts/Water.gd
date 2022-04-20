@@ -50,13 +50,13 @@ func add_fish(fish):
 	for i in get_inventory():
 		if fish.name == i.get_name():
 			i.set_amount(i.get_amount() + 1)
+			return i.name
 
 func fish():
-	
 	var rand = randi() % 99
 	if rand >= 0 and rand <= 49:
-		add_fish(get_random(common_fish))
+		return add_fish(get_random(common_fish))
 	elif rand >= 50 and rand <= 79:
-		add_fish(get_random(uncommon_fish))
+		return add_fish(get_random(uncommon_fish))
 	elif rand >= 80 and rand <= 99:
-		add_fish(get_random(rare_fish))
+		return add_fish(get_random(rare_fish))

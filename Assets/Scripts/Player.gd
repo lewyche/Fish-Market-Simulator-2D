@@ -29,11 +29,11 @@ func _ready():
 
 func _physics_process(delta):
 	
-	
-	if Input.is_action_just_pressed("Punch") && fishing:
+	if !GlobalVariables.gaming:
+		if Input.is_action_just_pressed("Punch") && fishing:
 		
-		landing_rod.position = get_local_mouse_position() + mouse_offset
-		landing_rod.check_for_water()
+			landing_rod.position = get_local_mouse_position() + mouse_offset
+			landing_rod.check_for_water()
 	
 	#Fishing 
 	if Input.is_action_just_pressed("Fish"):

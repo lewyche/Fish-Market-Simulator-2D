@@ -14,6 +14,10 @@ config/name="Fish- Market- Simulator- 2d"
 run/main_scene="res://Nodes/World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalVariables="*res://Assets/Scripts/Global_Variables.gd"
+
 [display]
 
 window/size/width=1920

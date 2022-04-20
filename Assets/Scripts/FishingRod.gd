@@ -15,4 +15,4 @@ func check_for_water():
 			
 	if water_body != null:
 		
-		water_body.fish()
+		get_node("Fishing Mini-Game").fishing_game(water_body)

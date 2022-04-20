@@ -12,11 +12,10 @@
 [ext_resource path="res://Assets/Textures/Fabric.jpg" type="Texture" id=10]
 [ext_resource path="res://Assets/Scripts/Water.gd" type="Script" id=11]
 
-
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1017.72, 998.962 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 35
 font_data = ExtResource( 5 )
 
@@ -41,7 +40,9 @@ script = ExtResource( 8 )
 [node name="Player" parent="WorldCanvas" instance=ExtResource( 1 )]
 position = Vector2( 1211, 754 )
 
-[node name="Pond" type="StaticBody2D" parent="WorldCanvas" groups=["Water"]]
+[node name="Pond" type="StaticBody2D" parent="WorldCanvas" groups=[
+"Water",
+]]
 modulate = Color( 0.462745, 0.784314, 1, 1 )
 self_modulate = Color( 0.282353, 0.984314, 0.803922, 1 )
 position = Vector2( 1210, 457 )
@@ -50,9 +51,7 @@ script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCanvas/Pond"]
 position = Vector2( -1.25488, 2.63574 )
-
-shape = SubResource( 6 )
-
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="WorldCanvas/Pond"]
 position = Vector2( 0, -21.1101 )
@@ -81,9 +80,8 @@ margin_left = 41.0
 margin_top = 27.0
 margin_right = 913.0
 margin_bottom = -739.0
-
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.219608, 1, 0.854902, 1 )
-custom_fonts/font = SubResource( 1 )
 text = "Quit game"
 script = ExtResource( 2 )
 
@@ -118,3 +116,16 @@ icon = ExtResource( 9 )
 flat = false
 expand_icon = true
 script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Escape Menu"]
+visible = false
+margin_left = 1347.0
+margin_top = 689.0
+margin_right = 1547.0
+margin_bottom = 771.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "LEFT CLICK NOW!!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
