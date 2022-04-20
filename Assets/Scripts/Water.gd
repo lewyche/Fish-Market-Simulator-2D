@@ -29,10 +29,6 @@ func _ready():
 	rare_fish = types[2]
 	randomize()
 	
-	for i in range(30):
-		print(fish())
-	
-	
 func get_random(arr):
 	var rand = randi() % arr.size()
 	return arr[rand]
@@ -56,7 +52,7 @@ func add_fish(fish):
 			i.set_amount(i.get_amount() + 1)
 
 func fish():
-	print("fished")
+	
 	var rand = randi() % 99
 	if rand >= 0 and rand <= 49:
 		add_fish(get_random(common_fish))
