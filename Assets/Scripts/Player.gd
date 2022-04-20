@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 var velocity = Vector2.ZERO
 export var speed = 50000
-export var direction : String
+export var direction : String = "UP"
 export var money = 0
 
 
