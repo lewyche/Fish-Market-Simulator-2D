@@ -14,9 +14,9 @@
 [ext_resource path="res://Assets/Scripts/FishingRod.gd" type="Script" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 22.5, 22.3333 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 22.5, 22.3333 )
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 1
