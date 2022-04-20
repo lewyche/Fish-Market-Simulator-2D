@@ -42,7 +42,7 @@ func _physics_process(delta):
 		
 		if !fishing:
 			
-			animation_player.play("Fishing")
+			animation_player.play(direction + "_Fish")
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			fishing = true
 		
@@ -67,32 +67,24 @@ func _physics_process(delta):
 		if Input.get_action_strength("Up"):
 			
 			input.y = -1
-			direction = "up"
-			$Sprite.rotation_degrees = 0
-			$Sprite.flip_v = false
+			direction = "Up"
 			
 		if Input.get_action_strength("Down"):
 			
 			input.y = 1
-			direction = "down"
-			$Sprite.rotation_degrees = 0
-			$Sprite.flip_v = true
+			direction = "Down"
 			
 		if Input.get_action_strength("Left"):
 			
 			input.y = 0
 			input.x = -1
-			direction = "left"
-			$Sprite.rotation_degrees = -90
-			$Sprite.flip_v = false
+			direction = "Left"
 			
 		if Input.get_action_strength("Right"):
 			
 			input.y = 0
 			input.x = 1
-			direction = "right"
-			$Sprite.rotation_degrees = 90
-			$Sprite.flip_v = false
+			direction = "Right"
 			
 		input = input.normalized()
 		
@@ -102,15 +94,15 @@ func _physics_process(delta):
 		
 		if velocity != Vector2.ZERO:
 			
-			animation_player.play("Walk")
+			animation_player.play(direction + "_Run")
 		else:
-			animation_player.play("Idle")
+			animation_player.play(direction + "_Idle")
 		
 		#PUNCH
 		######################################
 
 		if Input.is_action_just_pressed("Punch"):
 			
-			animation_player.play("Punch")
+			animation_player.play(direction + "_Punch")
 		
 		
