@@ -58,6 +58,7 @@ func _physics_process(delta):
 	
 	
 	if(!fishing):
+		
 	
 		#INPUT
 		#########################################

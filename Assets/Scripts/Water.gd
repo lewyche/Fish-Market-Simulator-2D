@@ -30,7 +30,10 @@ func _ready():
 	randomize()
 	
 func get_random(arr):
+	if arr.size() == 1:
+		return arr[0]
 	var rand = randi() % arr.size()
+	print(rand)
 	return arr[rand]
 	
 func get_inventory():
@@ -51,12 +54,18 @@ func add_fish(fish):
 		if fish.name == i.get_name():
 			i.set_amount(i.get_amount() + 1)
 			return i.name
+	return "error"
 
 func fish():
+	var fished_fish = common_fish[1]
+
 	var rand = randi() % 99
+
 	if rand >= 0 and rand <= 49:
-		return add_fish(get_random(common_fish))
+		fished_fish = get_random(common_fish)
 	elif rand >= 50 and rand <= 79:
-		return add_fish(get_random(uncommon_fish))
+		fished_fish = get_random(uncommon_fish)
 	elif rand >= 80 and rand <= 99:
-		return add_fish(get_random(rare_fish))
+		fished_fish = get_random(rare_fish)
+
+	return add_fish(fished_fish)
