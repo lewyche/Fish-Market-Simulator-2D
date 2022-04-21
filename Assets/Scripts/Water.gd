@@ -33,7 +33,6 @@ func get_random(arr):
 	if arr.size() == 1:
 		return arr[0]
 	var rand = randi() % arr.size()
-	print(rand)
 	return arr[rand]
 	
 func get_inventory():
