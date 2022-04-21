@@ -58,6 +58,19 @@ texture = ExtResource( 10 )
 [node name="Escape Menu" type="CanvasLayer" parent="."]
 layer = 2
 
+[node name="Label" type="Label" parent="Escape Menu"]
+visible = false
+margin_left = 1347.0
+margin_top = 689.0
+margin_right = 1547.0
+margin_bottom = 771.0
+size_flags_vertical = 1
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "LEFT CLICK NOW!!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Fish Market Panel" parent="Escape Menu" instance=ExtResource( 7 )]
 visible = false
 
@@ -114,16 +127,3 @@ icon = ExtResource( 9 )
 flat = false
 expand_icon = true
 script = ExtResource( 6 )
-
-[node name="Label" type="Label" parent="Escape Menu"]
-visible = false
-margin_left = 1347.0
-margin_top = 689.0
-margin_right = 1547.0
-margin_bottom = 771.0
-size_flags_vertical = 1
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-text = "LEFT CLICK NOW!!!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
