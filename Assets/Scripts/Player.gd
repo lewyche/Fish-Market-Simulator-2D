@@ -3,17 +3,15 @@ extends KinematicBody2D
 
 var velocity = Vector2.ZERO
 export var speed = 50000
-export var direction : String = "UP"
+export var direction : String = "Up"
 export var money = 0
 
 
 onready var landing_rod = $FishingRod
-var mouse_offset = Vector2(0,0)
 
 var menu_open = false
 
 export var fishing = false
-
 
 onready var animation_player = $AnimationPlayer
 
@@ -33,8 +31,8 @@ func _physics_process(delta):
 	
 	if !GlobalVariables.gaming:
 		if Input.is_action_just_pressed("Punch") && fishing:
-		
-			landing_rod.position = get_local_mouse_position() + mouse_offset
+			
+			landing_rod.position = get_local_mouse_position()
 			landing_rod.check_for_water()
 	
 	#Fishing 

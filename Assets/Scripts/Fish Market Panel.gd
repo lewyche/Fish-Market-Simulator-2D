@@ -21,7 +21,7 @@ var open = false	#is market open
 
 var curr_fish_name = ""
 
-onready var player = get_parent().get_parent().get_node("WorldCanvas").get_node("Player")
+onready var player = get_parent().get_parent().get_node("Player")
 onready var inventory = get_parent().get_node("Escape").get_node("Inventory")
 
 enum direction {
