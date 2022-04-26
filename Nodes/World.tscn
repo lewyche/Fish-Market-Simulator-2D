@@ -40,7 +40,9 @@ script = ExtResource( 8 )
 [node name="Player" parent="WorldCanvas" instance=ExtResource( 1 )]
 position = Vector2( 1211, 754 )
 
-[node name="Pond" type="StaticBody2D" parent="WorldCanvas" groups=["Water"]]
+[node name="Pond" type="StaticBody2D" parent="WorldCanvas" groups=[
+"Water",
+]]
 modulate = Color( 0.462745, 0.784314, 1, 1 )
 self_modulate = Color( 0.282353, 0.984314, 0.803922, 1 )
 position = Vector2( 1210, 457 )
@@ -78,8 +80,8 @@ margin_left = 41.0
 margin_top = 27.0
 margin_right = 913.0
 margin_bottom = -739.0
-custom_colors/font_color = Color( 0.219608, 1, 0.854902, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.219608, 1, 0.854902, 1 )
 text = "Quit game"
 script = ExtResource( 2 )
 

@@ -1,3 +1,3 @@
 extends Node
 
-var gaming = false
+var gaming = false		#PERFECTLY GOOD VARIABLE NAME
