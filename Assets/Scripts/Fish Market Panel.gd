@@ -120,12 +120,24 @@ func convert_price_to_graph(val):
 	var difference = lower_limit - val	
 	return upper_limit + difference
 	
-func fit_point(p):
+func fit_point(p):		#function currently not in use
 	if p > prev_price:
 		p = p * (multiplier * 0.1)
 	elif p < prev_price:
 		p = p * multiplier
 	return p
+
+func get_point(i):		#return point on graph
+	var pointX = graph_start + i * column_size		#x value of point in the graph
+	var pointY = convert_price_to_graph(calc_price())
+	
+	pointX = move_points_back(pointX)
+	pointY = move_points_horizontally(pointY) 
+
+	var point_pos = Vector2(pointX, pointY)
+	
+	return point_pos
+	
 
 func open_market():
 	$FishLine.clear_points()
@@ -133,16 +145,8 @@ func open_market():
 	var i = 0
 	open = true
 	while open == true:
-
-		var pointX = graph_start + i * column_size		#x value of point in the graph
-		var pointY = convert_price_to_graph(calc_price())
 		
-		pointX = move_points_back(pointX)
-		pointY = move_points_horizontally(pointY) 
-		
-
-
-		var point_pos = Vector2(pointX, pointY)
+		var point_pos = get_point(i)
 		
 		yield(get_tree().create_timer(tick_time), "timeout")	#wait
 		
@@ -189,30 +193,29 @@ func find_fish():
 		if i.get_name() == curr_fish_name:
 			return i
 	
-
+func change_labels():
+	$FishInformation.change_money(player.get_money())
+	$FishInformation.change_amount("amount: " + str(get_fish_amount()))
+	
+func set_money_and_amount(money, amount):
+	player.set_money(money)
+	find_fish().set_amount(amount)
 
 func buy(amount):
 
 	if player.get_money() >= curr_price * amount:
-		print("buy")
-		player.set_money(player.get_money() - curr_price * amount)
-		var curr_fish = find_fish()
-		curr_fish.set_amount(get_fish_amount() + amount)
 		
-		$FishInformation.change_money(player.get_money())
-		$FishInformation.change_amount("amount: " + str(get_fish_amount()))
-
+		set_money_and_amount(player.get_money() - curr_price * amount, get_fish_amount() + amount)
+		
+		change_labels()
 
 func sell(amount):
-	print("sell")
+	
 	if check_fish_amount(amount) == true:
-		player.set_money(player.get_money() + curr_price * amount)
-		var curr_fish = find_fish()
-		curr_fish.set_amount(get_fish_amount() - amount)
 		
+		set_money_and_amount(player.get_money() + curr_price * amount, get_fish_amount() - amount)
 		
-		$FishInformation.change_money(player.get_money())
-		$FishInformation.change_amount("amount: " + str(get_fish_amount()))
+		change_labels()
 		
 
 func _ready():	#prepare for graph

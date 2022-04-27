@@ -7,7 +7,7 @@ var caught = false
 
 func play_animation():	#plays fish bite animation
 	ui.visible = true
-	GlobalVariables.gaming = true
+	GlobalVariables.gaming = true	
 
 func fishing_game(water_body):
 
