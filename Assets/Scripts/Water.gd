@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-onready var world = get_parent().get_parent()
+onready var world = get_parent()
 onready var player = get_parent().get_node("Player")
 onready var fish_data = world.get_node("Escape Menu").get_node("Fish Market Panel").get_node("FishData")
 
