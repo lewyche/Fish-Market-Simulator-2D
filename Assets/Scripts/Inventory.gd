@@ -1,7 +1,7 @@
 extends Control
 
 var menu_items : Array
-onready var player = get_node("/root/World/WorldCanvas/Player")
+onready var player = get_node("/root/World/Player")
 
 
 
