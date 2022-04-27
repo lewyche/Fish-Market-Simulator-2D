@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Nodes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Scripts/QuitButton.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Textures/Fish/BlorbFish.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Textures/Fabric.jpg" type="Texture" id=10]
 [ext_resource path="res://Assets/Scripts/Water.gd" type="Script" id=11]
+[ext_resource path="res://Nodes/MusicPlayer.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1017.72, 998.962 )
@@ -129,3 +130,5 @@ text = "LEFT CLICK NOW!!!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MusicPlayer" parent="." instance=ExtResource( 12 )]
